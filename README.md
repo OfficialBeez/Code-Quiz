@@ -20,7 +20,7 @@ The following animation/screenshot shows the web application's appearance and fu
 
 ## Review
 
-* Code and Mock-up Requirments are from the U of A Challenge 1
+* Code and Mock-up Requirments are from the U of A Challenge 4
 * Code Done By : Jeffery Koon
 * Do not copy any of my Code.
 

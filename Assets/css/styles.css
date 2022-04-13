@@ -1,0 +1,68 @@
+* {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+button {
+    background-color: #412341;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    border-style: none;
+    font-size: 16px;
+    border-radius: 15px;
+    text-align: center;
+  }
+.button:hover {
+    background-color: #574673;
+  }
+
+/* Navigation */
+
+#highscores {
+    position: absolute;
+    top:1% ;
+    right:1% ;
+  }
+
+/* Starting homepage */
+#startPage {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#startPage h1 {
+    margin: 100px auto 50px auto;
+}
+
+#startButton {
+    margin: 50px 0 0 0;
+}
+
+
+/* Media Query */
+/* Screen size is larger than 600px */
+@media screen and (min-width: 601px) {
+    #startPage p {
+        font-size: 22px;
+    }
+    
+    #startPage h1 {
+        font-size: 32px;
+    }
+}
+
+/* Screen size is smaller than 600px */
+@media screen and (max-width: 600px) {
+    button {
+        font-size: 12px;
+    }
+    #startPage p {
+        font-size: 16px;
+    }
+    
+    #startPage h1 {
+        font-size: 20px;
+    }
+}

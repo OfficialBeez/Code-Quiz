@@ -31,7 +31,7 @@ button {
     font-size: 18px;
 }
 
-/* Starting homepage */
+/* Starting homepage */ 
 #startPage {
     align-items: center;
     text-align: center;
@@ -47,6 +47,16 @@ button {
     margin: 50px 0 0 0;
 }
 
+/* Questions Section */
+
+li {
+    list-style-type:none;
+    padding:1% 10%;
+    
+}
+.questionButton {
+    background-color: #574673;
+}
 
 /* Media Query */
 /* Screen size is larger than 600px */

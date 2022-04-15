@@ -48,11 +48,18 @@ button {
 }
 
 /* Questions Section */
+#questionTitle {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 125px;
+}
 
 li {
+    margin-top: 50px;
     list-style-type:none;
-    padding:1% 10%;
-    
+    padding: 5px;
+    align-items: center;
+    text-align: center;
 }
 .questionButton {
     background-color: #574673;

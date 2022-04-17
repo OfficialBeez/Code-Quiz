@@ -17,7 +17,7 @@ button {
 }
 
 /* Navigation */
-#header {
+#navigation {
     position: absolute;
     top:1% ;
     right:1%;
@@ -26,9 +26,34 @@ button {
     text-align: center;
 }
 
+/* Timer */
+#scoreboard {
+    position: absolute;
+    top:10%;
+    right:3%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px 0 black;
+    background-color: #f1f1f1;
+}
+
 #timer {
-    margin-top: 15px;
+    padding:3px;
+    text-align: center;
     font-size: 18px;
+}
+.color-full {
+    background-color: #53bb74;
+}
+.color-half {
+    background-color: #e5554e;
+}
+.time-left {
+    font-size: 14px;
+    font: thin 15px Arial, sans-serif;
+    color: #65584c;
+    text-transform: uppercase;
+    padding: 3px;
 }
 
 /* Starting homepage */ 

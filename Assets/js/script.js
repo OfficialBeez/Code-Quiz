@@ -11,6 +11,9 @@ var choice2 = document.getElementById("B");
 var choice3 = document.getElementById("C");
 var choice4 = document.getElementById("D");
 
+var questionIndex = 0;
+
+
 // Question Array
 var questions = [ 
     {
@@ -61,24 +64,33 @@ var questions = [
         "answer" : "C"
     },
 ];
-var questionIndex = 0;
 
 //Sets timer to zero if quiz not started
-timer.textContent = "Time: " + 0;
-
+timer.textContent = "00:" + 0 + 0;
 //Makes it show starting page
 display(0);
 
+//Clock set with standard seconds
+function clock() {
+    setInterval(function () {
+        timeLeft--;
+        if (timeLeft >= 10) {
+            timer.textContent = '00:' + timeLeft;
+        } else {
+            timer.textContent = '00:' + 0 + timeLeft 
+            document.getElementById("timer").style.backgroundColor = "#e5554e";
+        }
+    //if (timeLeft === 0 || questions.length === questionIndex) {
+        //placeholder till finished screen done
+   // }
+    }, 1000)
+}
 //Changes Display and Starts the Timer
 function startQuiz() {
-    timeLeft = 60;
-    var interval = setInterval(function () {
-        timeLeft--;
-        timer.textContent = 'Time : ' + timeLeft;
-        //if (timeLeft === 0 || questions.length === questionIndex) {
-            //placeholder till finished screen done
-       // }
-    }, 1000)
+    timeLeft = 30;
+    timer.textContent = '01:' + 0 + 0;
+    document.getElementById("timer").style.backgroundColor = "#53bb74";
+    clock();
     display(1);
 }
 //Question Header and HTML built-in choice feature connected to the array
@@ -95,7 +107,7 @@ function showQuestions() {
     choice4.innerHTML = show.D;
     choice4.setAttribute = ("data-answer", show.D);
 
-    // Answer Events
+// Answer Events
 choice1.addEventListener("click", function (event) {
     checkAnswer(event);
 });

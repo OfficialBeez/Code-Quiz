@@ -90,6 +90,13 @@ li {
     background-color: #574673;
 }
 
+#answerResponse {
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 40px;
+    align-items: center;
+}
+
 /* Media Query */
 /* Screen size is larger than 600px */
 @media screen and (min-width: 601px) {

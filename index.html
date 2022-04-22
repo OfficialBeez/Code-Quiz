@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="Assets/css/styles.css">
     </head>
-    <!--Navagation-->
     <body>
+        <!--Navagation-->
         <nav id="navigation">
             <button type="button" id="highscores" class="button">View High Scores</button>
         </nav>
@@ -29,17 +29,20 @@
              </div>
 
              <div id="questionPage">
-                 <h2 id="questionTitle"></h2>
-                 <li><button type="button" class="questionButton" id="A"></button></li>
-                 <li><button type="button" class="questionButton" id="B"></button></li>
-                 <li><button type="button" class="questionButton" id="C"></button></li>
-                 <li><button type="button" class="questionButton" id="D"></button></li>
+                <ul>
+                <h2 id="questionTitle"></h2>
+                <li><button type="button" class="questionButton" id="A"></button></li>
+                <li><button type="button" class="questionButton" id="B"></button></li>
+                <li><button type="button" class="questionButton" id="C"></button></li>
+                <li><button type="button" class="questionButton" id="D"></button></li>
+                <!--<li><button id="correct"></li>-->
+                </ul>
+                <div id="answerResponse"></div>
              </div>
         </main>
 
 
         <script src="Assets/js/script.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </body>
 
 

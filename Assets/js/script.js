@@ -11,60 +11,63 @@ var choice2 = document.getElementById("B");
 var choice3 = document.getElementById("C");
 var choice4 = document.getElementById("D");
 
-var questionIndex = 0;
+var questionButton = document.querySelector(".questionButton")
 
+var correct = document.getElementById("correct");
+var answerResponse = document.getElementById("answerResponse");
 
 // Question Array
 var questions = [ 
     {
-        "questionTitle" : "Test",
-        "A" : "Test",
-        "B" : "Test",
-        "C" : "Test",
-        "D" : "Test",
-        "answer" : "C"
+        questionTitle : "Test1",
+        A : "1. test",
+        B : "2. test",
+        C : "3. test",
+        D : "4. test",
+        correct : "1. test",
     },
     {
-        "questionTitle" : "",
-        "A" : "",
-        "B" : "",
-        "C" : "",
-        "D" : "",
-        "answer" : "C"
+        questionTitle : "Test2",
+        A : "1. test",
+        B : "2. test",
+        C : "3. test",
+        D : "4. test",
+        correct : "4. test",
     },
     {
-        "questionTitle" : "",
-        "A" : "",
-        "B" : "",
-        "C" : "",
-        "D" : "",
-        "answer" : "C"
+        questionTitle : "Test3",
+        A : "1. test",
+        B : "2. test",
+        C : "3. test",
+        D : "4. test",
+        correct : "4. test",
     },
     {
-        "questionTitle" : "",
-        "A" : "",
-        "B" : "",
-        "C" : "",
-        "D" : "",
-        "answer" : "C"
+        questionTitle : "Test4",
+        A : "1. test",
+        B : "2. test",
+        C : "3. test",
+        D : "4. test",
+        correct : "4. test",
     },
     {
-        "questionTitle" : "",
-        "A" : "",
-        "B" : "",
-        "C" : "",
-        "D" : ""
+        questionTitle : "Test5",
+        A : "1. test",
+        B : "2. test",
+        C : "3. test",
+        D : "4. test",
+        correct : "4. test",
     },
     {
-        "questionTitle" : "",
-        "A" : "",
-        "B" : "",
-        "C" : "",
-        "D" : "",
-        "answer" : "C"
+        questionTitle : "Test6",
+        A : "1. test",
+        B : "2. test",
+        C : "3. test",
+        D : "4. test",
+        correct : "4. test",
     },
-];
-
+]
+var questionIndex = 0;
 //Sets timer to zero if quiz not started
 timer.textContent = "00:" + 0 + 0;
 //Makes it show starting page
@@ -80,9 +83,6 @@ function clock() {
             timer.textContent = '00:' + 0 + timeLeft 
             document.getElementById("timer").style.backgroundColor = "#e5554e";
         }
-    //if (timeLeft === 0 || questions.length === questionIndex) {
-        //placeholder till finished screen done
-   // }
     }, 1000)
 }
 //Changes Display and Starts the Timer
@@ -92,40 +92,67 @@ function startQuiz() {
     document.getElementById("timer").style.backgroundColor = "#53bb74";
     clock();
     display(1);
+        //if (timeLeft === 0 || questions.length === questionIndex) {
+        //placeholder till finished screen done
+   // }
 }
-//Question Header and HTML built-in choice feature connected to the array
+//Question Header and and choices from array
 function showQuestions() {
     var show = questions[questionIndex];
 
     questionTitle.innerHTML = show.questionTitle;
+
     choice1.innerHTML = show.A;
-    choice1.setAttribute = ("data-answer", show.A);
+    choice1.setAttribute("data-answer", show.A);
     choice2.innerHTML = show.B;
-    choice2.setAttribute = ("data-answer", show.B);
+    choice4.setAttribute("data-answer", show.B);
     choice3.innerHTML = show.C;
-    choice3.setAttribute = ("data-answer", show.C);
+    choice4.setAttribute("data-answer", show.C);
     choice4.innerHTML = show.D;
-    choice4.setAttribute = ("data-answer", show.D);
+    choice4.setAttribute("data-answer", show.D);
+}
 
 // Answer Events
+showQuestions();
 choice1.addEventListener("click", function (event) {
     checkAnswer(event);
-});
+})
 choice2.addEventListener("click", function (event) {
     checkAnswer(event);
-});
+})
 choice3.addEventListener("click", function (event) {
     checkAnswer(event);
-});
+})
 choice4.addEventListener("click", function (event) {
     checkAnswer(event);
-});
+})
+
+// To see if answer is true or not
+function checkAnswer(event) {
+    var answer = event.currentTarget.dataset.answer;
+
+    for (let i = 0; i < questions.length; i++) {
+        if (answer == questions[questionIndex].correct) {
+            answerResponse.textContent = "Correct";
+        } 
+    }
+    if (answer != questions[questionIndex].correct) {
+        answerResponse.textContent = "Wrong";
+        timeLeft -= 5;
+        if (timeLeft < 0) {
+         timeLeft = 1;
+        }
+    }
+    if (questions.length === questionIndex+1) {
+        return;
+    }
+    questionIndex++;
+    showQuestions();
 }
 
 // Click events
 startButton.addEventListener("click", function () {
     startQuiz();
-    showQuestions();
     console.log('You have started the quiz');
 });
 highscores.addEventListener("click", function () {
